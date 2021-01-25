@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block container %}
+    <form method="POST">
+        {% csrf_token %}
+        <h1>você quer mesmo deletar isso?</h1>
+        <p>CEP: {{ endereco.cep }}</p>
+        <p>Endereco: {{ endereco.endereco }}</p>
+        <button type="submit" class="btn btn-danger">Confirmar</button>
+    </form>
+{% endblock %}
+

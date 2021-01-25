@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block container %}
+    <form method="post" id="form-cadastro-endereco" data-url="{% url 'cadastrar_endereco' %}">
+        {% csrf_token %}
+        <div class="row " id="lista-endereco">
+            {% for item in form %}
+                <div class="col-6 form-floating mb-3" >
+                    {{ item }}
+                    {{ item.label_tag }}
+                </div>
+            {% endfor %}
+        </div>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+{% endblock %}
+
